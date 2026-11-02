@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fan Project Phone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- กรอบโทรศัพท์ -->
+    <div class="phone-container">
+        <div class="phone-screen">
+            
+            <!-- รอยบาก / Dynamic Island (ถ้าต้องการ) -->
+            <div class="notch"></div>
+
+            <!-- หน้า Home (ไอคอนแอป) -->
+            <div id="home-screen" class="screen active">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <span>🔋 100%</span>
+                </div>
+                
+                <div class="app-grid">
+                    <div class="app-icon" onclick="openApp('chat-app')">
+                        <div class="icon-box chat-bg">💬</div>
+                        <span>Messages</span>
+                    </div>
+                    <div class="app-icon" onclick="openApp('gallery-app')">
+                        <div class="icon-box gallery-bg">🖼️</div>
+                        <span>Gallery</span>
+                    </div>
+                    <div class="app-icon" onclick="openApp('music-app')">
+                        <div class="icon-box music-bg">🎵</div>
+                        <span>Music</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- แอป Messages (แชท) -->
+            <div id="chat-app" class="screen app-page">
+                <div class="app-header">
+                    <button onclick="goHome()">◀ Back</button>
+                    <span>Chat with Idol</span>
+                </div>
+                <div class="chat-body">
+                    <div class="message received">สวัสดีครับแฟนๆ ทุกคน! ❤️</div>
+                    <div class="message sent">คิดถึงมากๆ เลย!</div>
+                    <div class="message received">วันนี้เตรียมรูปใหม่ไว้ให้ดูใน Gallery ด้วยนะ</div>
+                </div>
+            </div>
+
+            <!-- แอป Gallery (รูปภาพ) -->
+            <div id="gallery-app" class="screen app-page">
+                <div class="app-header">
+                    <button onclick="goHome()">◀ Back</button>
+                    <span>Gallery</span>
+                </div>
+                <div class="gallery-grid">
+                    <img src="https://via.placeholder.com/150" alt="photo1">
+                    <img src="https://via.placeholder.com/150" alt="photo2">
+                </div>
+            </div>
+
+            <!-- แอป Music (ฟังเพลง) -->
+            <div id="music-app" class="screen app-page">
+                <div class="app-header">
+                    <button onclick="goHome()">◀ Back</button>
+                    <span>Music Player</span>
+                </div>
+                <div class="music-body">
+                    <p>🎵 Fan Song - Special Track</p>
+                    <audio controls>
+                        <source src="your-audio.mp3" type="audio/mpeg">
+                        เบราว์เซอร์ของคุณไม่รองรับไฟล์เสียง
+                    </audio>
+                </div>
+            </div>
+
+            <!-- ปุ่ม Home ด่านล่างมือถือ -->
+            <div class="home-bar" onclick="goHome()"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
